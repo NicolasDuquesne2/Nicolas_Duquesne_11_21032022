@@ -1,0 +1,35 @@
+.hero-text {
+    margin: 0;
+    white-space: nowrap;
+    font-size: 3rem;
+    position: absolute;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-wrapper {
+    position: relative;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+
+.hero-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 30%;
+    border-radius: 16px;
+}
+
+.hero-image {
+    border-radius: 16px;
+    width: 100%;
+    height: 100%;
+}
+
