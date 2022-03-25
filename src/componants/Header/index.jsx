@@ -13,6 +13,9 @@ function Header({selected}) {
     } else if (selected === 'about') {
         home = <Link to='/'>Accueil</Link>
         about = <Link to='/A-propos' className='selected'>A Propos</Link>
+    } else {
+        home = <Link to='/'>Accueil</Link>
+        about = <Link to='/A-propos'>A Propos</Link>
     }
     
     return (
