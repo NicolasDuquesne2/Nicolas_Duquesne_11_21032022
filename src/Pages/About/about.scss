@@ -1,0 +1,14 @@
+.about-hero-wrapper {
+    margin-top: 46px;
+    margin-bottom: 45px;
+}
+
+.about-background {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__wrapper {
+        width: 82%;
+        margin-bottom: 90px;
+    }
+}

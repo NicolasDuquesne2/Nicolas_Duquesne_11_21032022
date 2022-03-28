@@ -1,7 +1,7 @@
 import Header from "../../componants/Header"
 import Card from "../../componants/Card"
 import './home.scss'
-import heroImage from '../../assets/shore.svg'
+import heroImage from '../../assets/shore.png'
 
 
 const cards = [
@@ -37,12 +37,12 @@ function Home() {
          <Header
             selected= 'home'
         />
-        <div className="hero-wrapper">
-          <p className="hero-text">Chez vous, partout et ailleurs</p>
-          <img className="hero-image" src= {heroImage} alt='landscape'/>
+        <div className="home-hero-wrapper">
+          <p className="home-hero-text">Chez vous, partout et ailleurs</p>
+          <img className="home-hero-image" src= {heroImage} alt='landscape'/>
         </div>
-        <div className="cards-background-wrapper">
-          <div className="cards-wrapper">
+        <div className="home-cards-background-wrapper">
+          <div className="home-cards-wrapper">
           {cards.map((card, index) => (
             <Card
               key={`${card.name}-${index}`}
