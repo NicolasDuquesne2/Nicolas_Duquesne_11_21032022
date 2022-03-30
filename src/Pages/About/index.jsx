@@ -42,6 +42,7 @@ function About() {
                 key={`${dropdown.title}-${index}`}
                 title={dropdown.title}
                 text={dropdown.text}
+                page='about'
               />
             ))}
           </div>

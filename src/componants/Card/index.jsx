@@ -3,7 +3,6 @@ import './card.scss'
 
 function Card({title}) {
     return (
-
     <div className='card-wrapper'>
         <Link to={`/Logements/${title}`}>
             <p className='card-text'>

@@ -1,7 +1,22 @@
 import './dropdown.scss'
 
 
-function DropDown({title, text}) {
+function DropDown({title, text, page}) {
+    let dropdownBody = null
+
+    if(typeof(text) === 'string'){
+        if(page === 'about') {
+            dropdownBody = <p className='dropdown__text-body__text--15'>{text}</p>
+        } else if(page === 'lodging') {
+            dropdownBody = <p className='dropdown__text-body__text--112'>{text}</p>
+        }
+    } else if (typeof(text) === 'object') {
+        dropdownBody = <ul className='dropdown__text-body__list'>
+                           {text.map((item) => (
+                               <li>{item}</li>
+                           ))}
+                       </ul>
+    }
 
     return (
         <div className='dropdown'>
@@ -11,7 +26,7 @@ function DropDown({title, text}) {
                 <p className='dropdown__chevron'></p>
             </div>
             <div className='dropdown__text-body'>
-                <p className='dropdown__text-body-text'>{text}</p>
+                {dropdownBody}
             </div>
         </div>
     )
