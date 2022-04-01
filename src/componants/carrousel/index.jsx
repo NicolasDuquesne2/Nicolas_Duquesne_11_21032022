@@ -1,10 +1,9 @@
 import './carrousel.scss'
-import image from '../../assets/carrousel.png'
 
-function Carrousel() {
+function Carrousel({cover, pictures}) {
     return (
         <div className='carrousel'>
-            <img className ='carrousel__img' src={image} alt='carrousel'></img>
+            <img className ='carrousel__img' src={cover} alt='carrousel'></img>
         </div>
     )
 }

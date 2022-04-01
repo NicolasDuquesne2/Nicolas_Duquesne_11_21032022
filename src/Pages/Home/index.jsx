@@ -2,34 +2,7 @@ import Header from "../../componants/Header"
 import Card from "../../componants/Card"
 import './home.scss'
 import heroImage from '../../assets/shore.png'
-
-
-const cards = [
-  {
-    name:'Villa Maria'
-  },
-
-  {
-    name:'Cozy loft champs élysées'
-  },
-
-  {
-    name:'Cozy loft boulevard Raspail'
-  },
-
-  {
-    name:'Cozy loft boulevard du Montparnasse'
-  },
-
-  {
-    name:'Cozy loft boulevard Saint Michel'
-  },
-
-  {
-    name:'Cozy loft rue Saint-Jacques'
-  },
-
-]
+import cards from '../../data/logements.json'
 
 function Home() {
     return (
@@ -43,10 +16,11 @@ function Home() {
         </div>
         <div className="home-cards-background-wrapper">
           <div className="home-cards-wrapper">
-          {cards.map((card, index) => (
+          {cards.map((card) => (
             <Card
-              key={`${card.name}-${index}`}
-              title={card.name}
+              key={card.id}
+              id={card.id}
+              title={card.title}
             />
           ))}
           </div>
