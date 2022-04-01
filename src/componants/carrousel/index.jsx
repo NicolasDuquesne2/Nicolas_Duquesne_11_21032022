@@ -4,7 +4,7 @@ import image from '../../assets/carrousel.png'
 function Carrousel() {
     return (
         <div className='carrousel'>
-            <img src={image} alt='carrousel'></img>
+            <img className ='carrousel__img' src={image} alt='carrousel'></img>
         </div>
     )
 }

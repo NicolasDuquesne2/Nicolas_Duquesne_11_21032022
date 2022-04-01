@@ -3,50 +3,30 @@ import Header from '../../componants/Header'
 import Carrousel from '../../componants/carrousel'
 import Tag from '../../componants/Tag'
 import DropDown from '../../componants/Dropdown'
+import './lodging.scss'
+import hostplacehoder from '../../assets/host.png'
+import { useFetch } from '../../utils/fetch'
+import datas from '../../data/logements.json'
 
-
-
-const lodgingTemp = {
-  location: {
-    city: 'Paris',
-    district: 'Ile de France'
-  },
-
-  owner: {
-    firstname: 'Alexendre',
-    name: 'Dumas'
-  },
-
-  tags: ['Cosy', 'Canal', 'Paris 10'],
-
-  descriptions: {
-    title: 'Description',
-    text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua'
-  },
-
-  equipements: {
-    title: 'Equipements',
-    list: ['Climatisation', 'Wi-fi', 'Cuisine', 'Espace de travail', 'fer à repasser', 'sèche-cheveux', 'Cintres']
-  }
-}
 
 function Lodging() {
+  /*const { data, isLoading, error } = useFetch('https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json')
+  const { lodgingData } = data
+  console.log(lodgingData)*/
   const { name } = useParams()
     return (
       <div className='wrapper'>
         <Header selected=''/>
-        <div className="Lodging">
+        <div className="lodging">
           <Carrousel />
           <div className='id-wrapper'>
-            <div className='address'>
-              <h1>Logements : {name}</h1>
-              <p></p>
-            </div>
+            <h1 className='id-wrapper__name'>{name}</h1>
             <div className='owner-id'>
-              <p className='owner-id__name'></p>
-              <img className='owner-id__pic' alt='name' />
+              <p className='owner-id__name'>{`${lodgingTemp.owner.firstname} ${lodgingTemp.owner.name}`}</p>
+              <img className='owner-id__pic' src={hostplacehoder} alt='name' />
             </div>
           </div>
+          <p className='address'>{`${lodgingTemp.location.city}, ${lodgingTemp.location.district}`}</p>
           <div className='tags-wrapper'>
             <div className='tags-wrapper__list'>
               {lodgingTemp.tags.map((title, index) => (
