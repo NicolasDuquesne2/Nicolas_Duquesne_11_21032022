@@ -7,29 +7,6 @@ import './lodging.scss'
 import { useFetch } from '../../utils/fetch'
 import cards from '../../data/logements.json'
 
-const lodgingTemp = {
-  location: {
-    city: 'Paris',
-    district: 'Ile de France'
-  },
-
-  owner: {
-    firstname: 'Alexendre',
-    name: 'Dumas'
-  },
-
-  tags: ['Cosy', 'Canal', 'Paris 10'],
-
-  descriptions: {
-    title: 'Description',
-    text: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua'
-  },
-
-  equipements: {
-    title: 'Equipements',
-    list: ['Climatisation', 'Wi-fi', 'Cuisine', 'Espace de travail', 'fer à repasser', 'sèche-cheveux', 'Cintres']
-  }
-}
 
 function Lodging() {
   /*const { data, isLoading, error } = useFetch('https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json')
