@@ -3,15 +3,15 @@ import Header from '../../componants/Header'
 import Carrousel from '../../componants/carrousel'
 import Tag from '../../componants/Tag'
 import DropDown from '../../componants/Dropdown'
+import StarsWrapper from '../../componants/StarsWrapper'
 import './lodging.scss'
 import { useFetch } from '../../utils/fetch'
-import cards from '../../data/logements.json'
+import cards from "../../data/logements.json"
 
 
 function Lodging() {
-  /*const { data, isLoading, error } = useFetch('https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1/logements.json')
-  const { lodgingData } = data
-  console.log(lodgingData)*/
+  /*const datas = useFetch('./logements.json')
+  console.log(datas)*/
   const { id } = useParams()
   const card = cards.filter((card) => card.id === id)[0]
 
@@ -20,7 +20,6 @@ function Lodging() {
         <Header selected=''/>
         <div className="lodging">
           <Carrousel 
-            cover={card.cover}
             pictures={card.pictures}
           />
           <div className='id-wrapper'>
@@ -40,9 +39,9 @@ function Lodging() {
                 />
               ))}
             </div>
-            <div className='stars'>
-
-            </div>
+            <StarsWrapper 
+              rating={card.rating}
+            />
           </div>
           <div className='dropdowns-wrapper'>
             <DropDown 

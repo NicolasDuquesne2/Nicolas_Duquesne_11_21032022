@@ -17,10 +17,19 @@
     display: flex;
     align-items: center;
     &__name {
+        display: inline-block;
+        width: min-content;
+        text-align: end;
         font-size: 1.12rem;
         margin-top: 0;
         margin-bottom: 0;
         margin-right: 10px;
+    }
+
+    &__pic {
+        border-radius: 50%;
+        width: 64px;
+        height: 64px;
     }
 }
 
@@ -30,6 +39,9 @@
 }
 
 .tags-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     &__list {
         margin: 24px 0 24px 0 ;
         display: flex;
