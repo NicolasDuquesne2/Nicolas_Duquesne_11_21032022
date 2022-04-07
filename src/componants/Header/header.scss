@@ -1,20 +1,43 @@
+@import '../../utils/variables/variables.scss';
+
 .header {
     display: flex;
-    padding-top: 2.5rem;
+    padding-top: 1.2rem;
     justify-content: space-between;
+
+    @media (min-width: $med-min-width) {
+        padding-top: 2.5rem;
+    }
+}
+
+.logo {
+    width: 145px;
+    height: 47px;
+
+    @media (min-width: $med-min-width) {
+        width: unset;
+        height: unset;
+    }
 }
 
 nav {
-    width: 15rem;
+    width: 8rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    @media (min-width: $med-min-width) {
+        width: 15rem;
+    }
 }
 
 a {
-    font-size: 1.5rem;
+    font-size: .75rem;
     text-decoration: none;
+
+    @media (min-width: $med-min-width) {
+        font-size: 1.5rem;
+    }
 }
 
 .selected {

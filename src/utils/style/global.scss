@@ -1,6 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap);
-
-$main-color : #FF6060;
+@import '../variables/variables.scss';
 
 html{
     font-family: 'Montserrat', 'Trebuchet MS', 'Helvetica', 'sans-serif';
@@ -36,7 +35,11 @@ a {
 .wrapper {
     display: flex;
     flex-direction: column;
-    max-width: 86%;
+    width: 93%;
     margin-left: auto;
     margin-right: auto;
+
+    @media (min-width: 768px) {
+        width: 86%;
+    }
 }

@@ -20,7 +20,7 @@ function Header({selected}) {
     
     return (
         <div className='header'>
-            <img src={logo} alt='Kasa' />
+            <img className='logo' src={logo} alt='Kasa' />
             <nav>
             {home}
             {about}

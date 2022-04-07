@@ -1,5 +1,5 @@
 import './carrousel.scss'
-import { useRef, useState } from 'react'
+import { useRef, useState, Fragment } from 'react'
 
 
 function Carrousel({pictures}) {
@@ -7,6 +7,7 @@ function Carrousel({pictures}) {
     const imgREf = useRef(null)
     const [index, setIndex] = useState(0)
     const uboundPictures = pictures.length -1
+    let content = ''
 
     function handleClick(e) {
 
@@ -30,12 +31,20 @@ function Carrousel({pictures}) {
             imgREf.current.attributes[1].value = pictures[index]
         }
     }
+
+    if (pictures.length === 1) {
+        content = <img ref={imgREf} className ='carrousel__img' src={pictures[index]} alt='carrousel'></img>
+    } else if(pictures.length > 1) {
+        content = <Fragment>
+                    <button className='previous' onClick={handleClick}></button>
+                    <img ref={imgREf} className ='carrousel__img' src={pictures[index]} alt='carrousel'></img>
+                    <button className='next' onClick={handleClick}></button>
+                  </Fragment>
+    }
     
     return (
         <div className='carrousel'>
-            <button className='previous' onClick={handleClick}></button>
-            <img ref={imgREf} className ='carrousel__img' src={pictures[index]} alt='carrousel'></img>
-            <button className='next' onClick={handleClick}></button>
+            {content}
         </div>
     )
 }
