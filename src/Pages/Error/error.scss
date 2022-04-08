@@ -1,3 +1,5 @@
+@import '../../utils/variables/variables.scss';
+
 .error-wrapper {
     display: flex;
     flex-direction: column;
@@ -5,17 +7,44 @@
 }
 
 .error-code {
-    font-size: 18rem;
-    margin-bottom: 110px;
+    font-size: 6rem;
+    margin-bottom: 30px;
+
+    @media (min-width: $larg-min-width) {
+        font-size: 18rem;
+        margin-bottom: 110px;
+    }
 }
 
 .error-text {
-    font-size: 2.2rem;
-    margin-bottom: 200px;
+    display: inline-block;
+    font-size: 1.125rem;
+    margin-bottom: 145px;
+    text-align: center;
+
+    @media (min-width: $larg-min-width) {
+        font-size: 2.2rem;
+        margin-bottom: 200px;
+    }
+}
+
+#part1::after {
+    content: "\a";
+    white-space: pre;
+
+    @media (min-width: $larg-min-width) {
+        content: "";
+        white-space: unset;
+    }
+
 }
 
 .error-link {
     text-decoration: underline;
-    font-size: 1.125rem;
     margin-bottom: 160px;
+    font-size: .875rem;
+    @media (min-width: $larg-min-width) {
+        font-size: 1.125rem;
+        margin-bottom: 80px;
+    }
 }

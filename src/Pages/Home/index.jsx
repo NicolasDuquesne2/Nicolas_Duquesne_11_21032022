@@ -1,7 +1,7 @@
 import Header from "../../componants/Header"
 import Card from "../../componants/Card"
+import Banner from "../../componants/banner"
 import './home.scss'
-import heroImage from '../../assets/shore.png'
 import cards from '../../data/logements.json'
 
 function Home() {
@@ -10,10 +10,9 @@ function Home() {
          <Header
             selected= 'home'
         />
-        <div className="home-hero-wrapper">
-          <p className="home-hero-text">Chez vous, partout et ailleurs</p>
-          <img className="home-hero-image" src= {heroImage} alt='landscape'/>
-        </div>
+        <Banner 
+          pageName='home'
+        />
         <div className="home-cards-background-wrapper">
           <div className="home-cards-wrapper">
           {cards.map((card) => (

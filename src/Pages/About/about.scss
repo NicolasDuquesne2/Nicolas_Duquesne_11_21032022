@@ -1,14 +1,17 @@
-.about-hero-wrapper {
-    margin-top: 46px;
-    margin-bottom: 45px;
-}
+@import '../../utils/variables/variables.scss';
 
 .about-background {
     display: flex;
     flex-direction: column;
     align-items: center;
     &__wrapper {
-        width: 82%;
-        margin-bottom: 90px;
+        width: 100%;
+        margin-bottom: 25px;
+
+        @media (min-width: $med-min-width) {
+            width: 82%;
+            margin-bottom: 90px;
+        }
+
     }
 }

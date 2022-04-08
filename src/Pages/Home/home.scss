@@ -1,74 +1,16 @@
 @import '../../utils/variables/variables.scss';
 
-.home-hero-text {
-    display: inline-block;
-    max-width: 217px;
-    margin: 0;
-    white-space:normal;
-    font-size: 1.5rem;
-    position: absolute;
-    color: white;
-    left: 15%;
-    top: 50%;
-    transform: translate(-15%, -50%);
-
-    @media (min-width: $larg-min-width){
-        max-width: unset;
-        font-size: 3rem;
-        white-space: nowrap;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-    }
-}
-
-.home-hero-wrapper {
-    position: relative;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    @media (min-width: $med-min-width) {
-        margin-top: 45px;
-    margin-bottom: 45px;
-    }
-}
-
-.home-hero-wrapper::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 111px;
-    background-color: black;
-    opacity: 30%;
-    border-radius: 16px;
-
-    @media (min-width: $med-min-width){
-        height: 99%;
-    }
-}
-
-.home-hero-image {
-    border-radius: 16px;
-    width: 100%;
-    height: 111px;
-
-    @media (min-width: $med-min-width){
-        height: 100%;
-    }
-}
-
 .home-cards-background-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 45px;
+    margin-bottom: 25px;
     padding-top: 55px;
     padding-bottom: 55px;
     background: #F6F6F6;
     border-radius: 16px;
     @media (min-width: $med-min-width){
-
+        margin-bottom: 45px;
     }
 }
 

@@ -1,3 +1,5 @@
+@import '../../utils/variables/variables.scss';
+
 .lodging {
     margin-top: 16px;
 }
@@ -42,8 +44,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     &__list {
         margin: 24px 0 24px 0 ;
         display: flex;
+    }
+}
+
+.dropdowns-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media (min-width: $larg-min-width) {
+        flex-direction: row;
     }
 }

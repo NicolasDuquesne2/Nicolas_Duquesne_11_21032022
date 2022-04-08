@@ -1,0 +1,90 @@
+@import '../../utils/variables/variables.scss';
+
+
+
+.banner {
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @media (min-width: $med-min-width) {
+        margin-top: 45px;
+        margin-bottom: 45px;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: black;
+        opacity: 30%;
+        border-radius: 16px;
+    }
+
+    &--home {
+        ::before{
+            height: 111px;
+            @media (min-width: $med-min-width){
+                height: 223px;
+            }
+        }
+    }
+
+
+    &--about {
+        ::before{
+            height: 223px;
+            @media (min-width: $med-min-width){
+                height: 223px;
+            }
+        }
+    }
+
+    &__text{
+        display: inline-block;
+        max-width: 217px;
+        margin: 0;
+        white-space:normal;
+        font-size: 1.5rem;
+        position: absolute;
+        color: white;
+        left: 15%;
+        top: 50%;
+        z-index: 1;
+        transform: translate(-15%, -50%);
+
+        @media (min-width: $larg-min-width){
+            max-width: unset;
+            font-size: 3rem;
+            white-space: nowrap;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__image {
+        position: relative;
+        border-radius: 16px;
+        width: 100%;
+        object-fit: cover;
+
+        
+        &--home{
+            height: 111px;
+            @media (min-width: $med-min-width){
+                height: 223px;
+            }
+        }
+
+        &--about {
+            height: 223px;
+            @media (min-width: $med-min-width){
+                height: 223px;
+            }
+        }
+
+    }
+}

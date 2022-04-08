@@ -4,10 +4,20 @@ import Body from '../Body'
 
 
 function DropDown({title, text, page}) {
+
+    let classNameadd = ''
+
+    if (page === 'lodging') {
+        classNameadd = 'dropdown__header--lodging'
+    } else if (page === 'about') {
+        classNameadd = 'dropdown__header--about'
+    }
+
+
     return (
         <div className='dropdown'>
             <input type="checkbox" className='dropdown__check'/>
-            <div className='dropdown__header'>
+            <div className={`dropdown__header ${classNameadd}`}>
                 <Title 
                     text={title}
                     page={page}
