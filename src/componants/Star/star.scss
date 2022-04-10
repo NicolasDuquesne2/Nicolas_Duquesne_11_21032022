@@ -1,9 +1,20 @@
+@import '../../utils/variables/variables.scss';
+
 .star{
+
+    width: 15px;
+    height: 15px;
+
+    @media (min-width: $med-min-width) {
+        width: 30px;
+        height: 30px;
+    }
+
     &--orange {
-        fill: #FF6060;
+        fill: $main-color;
     }
 
     &--grey {
-        fill:  #E3E3E3;
+        fill:  $third-color;
     }
 }

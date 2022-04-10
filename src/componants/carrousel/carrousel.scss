@@ -1,62 +1,104 @@
+@import '../../utils/variables/variables.scss';
+
 .carrousel {
     position: relative;
     &__img {
         width: 100%;
-        height: 415px;
+        height: 255px;
         border-radius: 16px;
         object-fit: cover;
+
+        @media (min-width: $med-min-width) {
+            height: 415px;
+        }
     }
 }
 
 
 .previous {
     position: absolute;
-    left: 10%;
-    top: 50%;
-    height: 76px;
-    width: 41px;
-    transform: translate(-10%, -50%);
     background: none;
     border-style: none;
     cursor: pointer;
+    left: 1%;
+    top: 50%;
+    height: 30px;
+    width: 25px;
+    transform: translate(-10%, -50%);
+
+    @media (min-width: $med-min-width) {
+        left: 10%;
+        top: 50%;
+        height: 76px;
+        width: 41px;
+        transform: translate(-10%, -50%);
+    }
+
+
     &::before {
-        border-style: solid;
-        border-width: 10px 10px 0 0;
         content: '';
+        border-style: solid;
         display: inline-block;
-        height: 45px;
         position: absolute;
-        left: 7px;
-        top: 8px;
-        transform: rotate(-135deg);
         vertical-align: top;
-        width: 45px;
         color: white;
+        border-width: 4px 4px 0 0;
+        height: 15px;
+        width: 15px;
+        left: 7px;
+        top: 4px;
+        transform: rotate(-135deg);
+
+        @media (min-width: $med-min-width) {
+            height: 45px;
+            width: 45px;
+            left: 7px;
+            top: 8px;
+            transform: rotate(-135deg);
+        }
     }
 }
 
 .next {
     position: absolute;
-    right: 10%;
-    top: 50%;
-    height: 76px;
-    width: 41px;
-    transform: translate(-10%, -50%);
     background: none;
     border-style: none;
     cursor: pointer;
+    right: 1%;
+    top: 50%;
+    height: 30px;
+    width: 25px;
+    transform: translate(-10%, -50%);
+
+    @media (min-width: $med-min-width) {
+        right: 10%;
+        top: 50%;
+        height: 76px;
+        width: 41px;
+        transform: translate(-10%, -50%);
+    }
+
     &::after {
-        border-style: solid;
-        border-width: 10px 10px 0 0;
         content: '';
+        border-style: solid;
         display: inline-block;
-        height: 45px;
         position: absolute;
-        right:7px;
-        top: 8px;
-        transform: rotate(45deg);
         vertical-align: top;
-        width: 45px;
         color: white;
+        border-width: 4px 4px 0 0;
+        height: 15px;
+        width: 15px;
+        right:7px;
+        top: 4px;
+        transform: rotate(45deg);
+
+        @media (min-width: $med-min-width) {
+
+            height: 45px;
+            width: 45px;
+            right:7px;
+            top: 8px;
+            transform: rotate(45deg);
+        }
     }
 }

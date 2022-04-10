@@ -22,26 +22,30 @@ function Lodging() {
           <Carrousel 
             pictures={card.pictures}
           />
-          <div className='id-wrapper'>
-            <h1 className='id-wrapper__name'>{card.title}</h1>
-            <div className='owner-id'>
-              <p className='owner-id__name'>{card.host.name}</p>
-              <img className='owner-id__pic' src={card.host.picture} alt={card.host.name} />
+          <div className="infos-wrapper">
+          <div className='left-wrapper'>
+              <h1 className='left-wrapper__name'>{card.title}</h1>
+              <p className='address'>{card.location}</p>
+              <div className='tags-wrapper'>
+                <div className='tags-wrapper__list'>
+                  {card.tags.map((title, index) => (
+                    <Tag
+                      key={`${title}-${index}`}
+                      title={title} 
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-          <p className='address'>{card.location}</p>
-          <div className='tags-wrapper'>
-            <div className='tags-wrapper__list'>
-              {card.tags.map((title, index) => (
-                <Tag
-                  key={`${title}-${index}`}
-                  title={title} 
-                />
-              ))}
+            <div className='right-wrapper'>
+              <StarsWrapper 
+                rating={card.rating}
+              />
+              <div className='owner-id'>
+                <p className='owner-id__name'>{card.host.name}</p>
+                <img className='owner-id__pic' src={card.host.picture} alt={card.host.name} />
+              </div>
             </div>
-            <StarsWrapper 
-              rating={card.rating}
-            />
           </div>
           <div className='dropdowns-wrapper'>
             <DropDown 

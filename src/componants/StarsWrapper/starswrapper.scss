@@ -1,0 +1,12 @@
+@import '../../utils/variables/variables.scss';
+
+.stars-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 95px;
+
+    @media (min-width: $med-min-width) {
+        width: 190px;
+        margin-bottom: 20px;
+    }
+}

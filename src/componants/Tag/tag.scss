@@ -1,11 +1,24 @@
+@import '../../utils/variables/variables.scss';
+
 .tag {
-    margin-right: 10px;
+    margin: 10px 10px 0 0;
     background: #FF6060;
     border-radius: 8px;
+
+    @media (min-width: $larg-min-width) {
+        border-radius: 16px;
+        margin: 0 10px 0 0;
+    }
+
     &__title {
         color: white;
         margin: 0;
-        padding: 0.15rem 1.5rem 0.15rem 1.5rem;
-        font-size: 0.9rem;
+        padding: 6px 30px 6px 30px;
+        font-size: .625rem;
+
+        @media (min-width: $larg-min-width) {
+            padding: 8px 40px 8px 40px;
+            font-size: 0.9rem;
+        }
     }
 }

@@ -4,50 +4,108 @@
     margin-top: 16px;
 }
 
-.id-wrapper {
-    margin-top: 40px;
+.infos-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $med-min-width) {
+        margin-top: 35px;
+    }
+
+    @media (min-width: $med-min-width) {
+        flex-direction: row;
+        justify-content:space-between;
+    }
+}
+
+.right-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 18px;
+
+    @media (min-width: $med-min-width) {
+        flex-direction: column-reverse;
+    }
+
     &__name{
-        margin: 0;
-        font-size: 2.25rem;
+        font-size: 0.75rem;
+
+        @media (min-width: $med-min-width) {
+            font-size: 2.25rem;
+        }
     }
 }
+
 
 .owner-id {
     display: flex;
     align-items: center;
+
     &__name {
         display: inline-block;
         width: min-content;
         text-align: end;
-        font-size: 1.12rem;
+        font-size: .75rem;
         margin-top: 0;
         margin-bottom: 0;
         margin-right: 10px;
+
+        @media (min-width: $med-min-width) {
+            font-size: 1.12rem;
+        }
     }
 
     &__pic {
         border-radius: 50%;
-        width: 64px;
-        height: 64px;
+        width: 32px;
+        height: 32px;
+
+        @media (min-width: $med-min-width) {
+            width: 64px;
+            height: 64px;
+        }
+    }
+}
+
+
+.left-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    &__name {
+        margin: 0 0 5px 0;
+        font-size: 1.125rem;
+        font-weight: 500;
+
+        @media (min-width: $med-min-width) {
+            font-size: 2.25rem;
+        }
     }
 }
 
 .address {
     margin: 0;
-    font-size: 1.12rem;
+    font-size: .875;
+
+    @media (min-width: $med-min-width) {
+        font-size: 1.12rem;
+    }
 }
 
 .tags-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 0;
+
+    @media (min-width: $med-min-width) {
+        margin: 24px 0 24px 0;
+    }
 
     &__list {
-        margin: 24px 0 24px 0 ;
         display: flex;
+        flex-wrap: wrap;
     }
 }
 
