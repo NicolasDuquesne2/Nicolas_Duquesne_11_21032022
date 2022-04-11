@@ -7,20 +7,23 @@ import Error from './Pages/Error'
 import Lodging from './Pages/Lodging'
 import Footer from './componants/Footer';
 import GlobalStyle from './utils/style/GlobalStyle'
+import { DataProvider } from './utils/contexct';
 import './utils/style/global.scss'
 
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <GlobalStyle />
-      <Routes>
-        <Route path="/" element={ <Home />} />
-        <Route path="/A-propos" element={ <About />} />
-        <Route path="/Logements/:id" element={ <Lodging />} />
-        <Route path="*" element= { <Error />} />
-      </Routes>
-      <Footer />
+      <DataProvider>
+        <GlobalStyle />
+        <Routes>
+          <Route path="/" element={ <Home />} />
+          <Route path="/A-propos" element={ <About />} />
+          <Route path="/Logements/:id" element={ <Lodging />} />
+          <Route path="*" element= { <Error />} />
+        </Routes>
+        <Footer />
+      </DataProvider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

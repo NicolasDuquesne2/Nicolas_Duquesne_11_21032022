@@ -1,3 +1,4 @@
+import { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import Header from '../../componants/Header'
 import Carrousel from '../../componants/carrousel'
@@ -5,15 +6,13 @@ import Tag from '../../componants/Tag'
 import DropDown from '../../componants/Dropdown'
 import StarsWrapper from '../../componants/StarsWrapper'
 import './lodging.scss'
-import { useFetch } from '../../utils/fetch'
-import cards from "../../data/logements.json"
+import { DataContext } from '../../utils/contexct'
 
 
 function Lodging() {
-  /*const datas = useFetch('./logements.json')
-  console.log(datas)*/
   const { id } = useParams()
-  const card = cards.filter((card) => card.id === id)[0]
+  const {imodatas} = useContext(DataContext)
+  const card = imodatas.filter((card) => card.id === id)[0]
 
     return (
       <div className='wrapper'>
