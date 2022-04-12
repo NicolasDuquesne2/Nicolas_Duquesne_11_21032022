@@ -1,16 +1,18 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, createContext } from 'react'
 
-export function useFetch(url) {
+const DataContext = createContext()
+
+const DataProvider = ({ children }) => {
+
   const [data, setData] = useState({})
   const [error, setError] = useState(false)
   const [isLoading, setLoading] = useState(true)
 
   useEffect(() => {
-    if (!url) return
 
     async function fetchData() {
       try {
-        const response = await fetch(url)
+        const response = await fetch('./logements.json')
         const data = await response.json()
         setData(data)
       } catch (err) {
@@ -22,9 +24,16 @@ export function useFetch(url) {
     }
 
     setLoading(true)
-
     fetchData()
-  }, [url])
+  }, [])
 
-  return { data, isLoading, error }
+
+ return (
+  <DataContext.Provider value={{data, error, isLoading}}>
+    {children}
+  </DataContext.Provider>
+
+ )
 }
+  
+export {DataContext, DataProvider}

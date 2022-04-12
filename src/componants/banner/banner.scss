@@ -18,13 +18,14 @@
         top: 0;
         left: 0;
         width: 100%;
-        background-color: black;
-        opacity: 30%;
         border-radius: 16px;
+        background: black;
+        opacity: 20%;
+        z-index: 1;
     }
 
     &--home {
-        ::before{
+        &::before{
             height: 111px;
             @media (min-width: $med-min-width){
                 height: 223px;
@@ -34,7 +35,7 @@
 
 
     &--about {
-        ::before{
+        &::before{
             height: 223px;
             @media (min-width: $med-min-width){
                 height: 223px;
@@ -52,7 +53,7 @@
         color: white;
         left: 15%;
         top: 50%;
-        z-index: 1;
+        z-index: 2;
         transform: translate(-15%, -50%);
 
         @media (min-width: $larg-min-width){

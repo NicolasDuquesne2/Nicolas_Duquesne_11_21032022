@@ -7,7 +7,7 @@ import Error from './Pages/Error'
 import Lodging from './Pages/Lodging'
 import Footer from './componants/Footer';
 import GlobalStyle from './utils/style/GlobalStyle'
-import { DataProvider } from './utils/contexct';
+import { DataProvider } from './utils/fetch';
 import './utils/style/global.scss'
 
 

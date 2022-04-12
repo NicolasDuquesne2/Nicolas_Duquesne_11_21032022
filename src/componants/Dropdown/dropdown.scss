@@ -6,9 +6,10 @@
     margin-bottom: 30px;
     position: relative;
 
-
-    @media (min-width: $larg-min-width) {
-        width: 47%;
+    &--lodging {
+        @media (min-width: $larg-min-width) {
+            width: 47%;
+        }
     }
 
     &__header {

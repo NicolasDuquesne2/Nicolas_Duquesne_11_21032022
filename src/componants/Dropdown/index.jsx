@@ -8,16 +8,16 @@ function DropDown({title, text, page}) {
     let classNameadd = ''
 
     if (page === 'lodging') {
-        classNameadd = 'dropdown__header--lodging'
+        classNameadd = '--lodging'
     } else if (page === 'about') {
-        classNameadd = 'dropdown__header--about'
+        classNameadd = '--about'
     }
 
 
     return (
-        <div className='dropdown'>
+        <div className={`dropdown dropdown${classNameadd}`}>
             <input type="checkbox" className='dropdown__check'/>
-            <div className={`dropdown__header ${classNameadd}`}>
+            <div className={`dropdown__header dropdown__header${classNameadd}`}>
                 <Title 
                     text={title}
                     page={page}
