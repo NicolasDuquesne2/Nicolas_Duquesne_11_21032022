@@ -10,6 +10,9 @@
 
     @media (min-width: $med-min-width) {
         padding-bottom: unset;
+        max-width: 1440px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
