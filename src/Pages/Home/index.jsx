@@ -29,6 +29,7 @@ function Home() {
                   key={card.id}
                   id={card.id}
                   title={card.title}
+                  image = {card.cover}
                 />
               ))}
               </div>
