@@ -10,6 +10,11 @@
 
     @media (min-width: $med-min-width) {
         padding-bottom: unset;
+        width: 86%;
+        
+    }
+
+    @media (min-width: $xtra-min-width) {
         max-width: 1440px;
         margin-left: auto;
         margin-right: auto;
