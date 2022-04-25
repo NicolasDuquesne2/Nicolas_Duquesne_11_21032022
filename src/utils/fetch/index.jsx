@@ -12,7 +12,12 @@ const DataProvider = ({ children }) => {
 
     async function fetchData() {
       try {
-        const response = await fetch('./logements.json')
+        const response = await fetch('./logements.json', {
+          method: 'GET',
+          headers: {
+            'Content-type': 'application/json'
+          }
+        })
         const data = await response.json()
         setData(data)
       } catch (err) {

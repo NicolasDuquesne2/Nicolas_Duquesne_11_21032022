@@ -9,15 +9,19 @@ import './home.scss'
 function Home() {
 
   const contReturn = useContext(DataContext)
-
   const data = contReturn.data
   const error = contReturn.error
   const isLoading = contReturn.isLoading
   let content = null
-
+  
 
   if (error) {
-    content = <span>Il y a un problème</span>
+    return (
+      <div className='wrapper'>
+        <Header selected=''/>
+        <h1 className='lodging-error-message'>Il y a un problème</h1>
+      </div>
+    )
   }
 
   if (isLoading) {

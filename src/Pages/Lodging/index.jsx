@@ -1,3 +1,4 @@
+import React from 'react'
 import { useContext } from 'react'
 import { useParams } from 'react-router-dom'
 import Header from '../../componants/Header'
@@ -15,76 +16,60 @@ function Lodging() {
   const data = contReturn.data
   const error = contReturn.error
   const isLoading = contReturn.isLoading
-  let content = null
-  let pictures = null
-  let cardTitle = null
-  let cardLocation = null
-  let cardRating = null
-  let cardHostName = null
-  let cardHostPict = null
-  let cardDescrib = null
-  let cardEquip
+
 
   if (error) {
-    content = <span>Il y a un problème</span>
+    return (
+      <div className='wrapper'>
+        <Header selected=''/>
+        <h1 className='lodging-error-message'>Il y a un problème</h1>
+      </div>
+    )
   }
 
   if(!isLoading) {
     const card = data.filter((card) => card.id === id)[0]
-    pictures = card.pictures
-    cardTitle = card.title
-    cardLocation = card.location
-    cardRating = card.rating
-    cardHostName = card.host.name
-    cardHostPict = card.host.picture
-    cardDescrib = card.description
-    cardEquip = card.equipments
-
-    content = <div className='tags-wrapper__list'>
-              {card.tags.map((title, index) => (
-                <Tag
-                  key={`${title}-${index}`}
-                  title={title} 
-                />
-              ))}
-              </div>
-  }
-
-  if(!isLoading) {
     return (
       <div className='wrapper'>
         <Header selected=''/>
         <div className="lodging">
           <Carrousel 
-            pictures={pictures}
+            pictures={card.pictures}
           />
           <div className="infos-wrapper">
           <div className='left-wrapper'>
-              <h1 className='left-wrapper__name'>{cardTitle}</h1>
-              <p className='address'>{cardLocation}</p>
+              <h1 className='left-wrapper__name'>{card.title}</h1>
+              <p className='address'>{card.location}</p>
               <div className='tags-wrapper'>
-                {content}
+                <div className='tags-wrapper__list'>
+                  {card.tags.map((title, index) => (
+                    <Tag
+                      key={`${title}-${index}`}
+                      title={title} 
+                    />
+                  ))}
+                </div>
               </div>
             </div>
             <div className='right-wrapper'>
               <StarsWrapper 
-                rating={cardRating}
+                rating={card.rating}
               />
               <div className='owner-id'>
-                <p className='owner-id__name'>{cardHostName}</p>
-                <img className='owner-id__pic' src={cardHostPict} alt={cardHostName} />
+                <p className='owner-id__name'>{card.host.name}</p>
+                <img className='owner-id__pic' src={card.host.picture} alt={card.host.name} />
               </div>
             </div>
           </div>
           <div className='dropdowns-wrapper'>
             <DropDown 
               title= 'Description'
-              text={cardDescrib}
+              text={card.description}
               page='lodging'
             />
             <DropDown 
                 title= 'Equipements'
-                text={cardEquip}
+                text={card.equipments}
                 page='lodging'
             />
           </div>
@@ -92,6 +77,8 @@ function Lodging() {
       </div>
     )
   }
+
+  return null
 }
   
-  export default Lodging
+  export default React.memo(Lodging)
